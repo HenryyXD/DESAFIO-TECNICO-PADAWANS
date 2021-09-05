@@ -67,6 +67,23 @@ h1.notLoaded, table.notLoaded{
   opacity: 0;
 }
 
+.th-sort-asc::after{
+  content: "\25b4";
+}
+
+.th-sort-desc::after{
+  content: "\25be";
+}
+
+.th-sort-asc::after,
+.th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.th-sort-asc,
+.th-sort-desc {
+  background: #b18623;
+}
 
 @media screen and (max-width: 1400px) {
   #arrow {

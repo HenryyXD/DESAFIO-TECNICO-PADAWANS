@@ -2,24 +2,8 @@ window.onload = () => {
   document.querySelectorAll(".notLoaded").forEach((i) => {
     i.classList.remove("notLoaded");
   })
-  showData();
+  getData("https://jsonplaceholder.typicode.com/albums").then(data => updateTable(data));
 };
-
-async function showData() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/albums");
-    const data = await response.json();
-    let table = document.querySelector("tbody");
-
-    data.forEach((item) => {
-      let line = createLine(item);
-      table.appendChild(line);
-    });
-
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 function createLine(item) {
   line = document.createElement("tr");
@@ -37,4 +21,3 @@ function createLine(item) {
 
   return line;
 }
-
